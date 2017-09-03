@@ -58,6 +58,7 @@
     <instance objName="obj_run_enemy" x="472" y="592" name="inst_18BB3766" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_run_enemy" x="592" y="432" name="inst_793439AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_run_enemy" x="600" y="552" name="inst_F9AFB521" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_train_head" x="240" y="264" name="inst_3696A291" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

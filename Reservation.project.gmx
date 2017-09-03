@@ -36,6 +36,8 @@
       <object>objects\obj_base_AI</object>
       <object>objects\obj_run_enemy</object>
       <object>objects\obj_seeker</object>
+      <object>objects\obj_train_head</object>
+      <object>objects\obj_train_body</object>
     </objects>
     <object>objects\obj_rock</object>
   </objects>

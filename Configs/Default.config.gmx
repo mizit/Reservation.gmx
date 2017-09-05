@@ -224,6 +224,7 @@
     <option_fullscreen>false</option_fullscreen>
     <option_gameguid>{0B469948-D1C2-4725-958E-7F98862DF758}</option_gameguid>
     <option_gameid>466402347</option_gameid>
+    <option_haptic_effects>false</option_haptic_effects>
     <option_hasloadimage>false</option_hasloadimage>
     <option_helpkey>true</option_helpkey>
     <option_html5_CreationEventOrder>true</option_html5_CreationEventOrder>

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_pesons</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>my_speed = 0;
+            <string>event_inherited();
+my_speed = 0;
 
 enum GG
 {
@@ -34,6 +35,17 @@ enum GG
     FORCE,
     DEATH 
 }
+
+enum DEATH
+{
+    EASY,
+    TAPE,
+    ARROW
+}
+
+death = DEATH.EASY;
+death_left = 0;
+death_step = 3;
 
 status = GG.STOP;
 nodes = obj_ground_control.nodes;
@@ -45,8 +57,8 @@ list_border_x = ds_list_create();
 list_border_y = ds_list_create();
 for (var i = 0; i &lt; ds_grid_width(nodes) - 2; i++)
 {
-    ds_list_add(list_border_x, i + 1, i + 1, 1, ds_grid_width(nodes) - 2);
-    ds_list_add(list_border_y, 1, ds_grid_height(nodes) - 2, i + 1, i + 1);
+    ds_list_add(list_border_x, i + 1, i + 1, 1, ds_grid_width(nodes) - 4);
+    ds_list_add(list_border_y, 1, ds_grid_height(nodes) - 4, i + 1, i + 1);
 }
 </string>
           </argument>
@@ -70,7 +82,8 @@ for (var i = 0; i &lt; ds_grid_width(nodes) - 2; i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>old_dir = direction;
+            <string>event_inherited();
+old_dir = direction;
 var l_x = real_to_grid_x(x);
 var l_y = real_to_grid_y(y);
 if (status != GG.DEATH)
@@ -96,6 +109,13 @@ if (status != GG.DEATH)
         direction = 270;
     }
 }
+else
+{
+    if (keyboard_check_pressed(vk_space))
+    {
+        room_restart();
+    }
+}
 if ((abs(direction - old_dir) == 180) &amp;&amp; (nodes[# l_x, l_y] == NODE.FREE))
 {
     direction = old_dir;
@@ -114,6 +134,35 @@ if (status == GG.FORCE)
 if (status == GG.DEATH)
 {
     speed = 0;
+    switch (death)
+    {
+        case DEATH.EASY:
+        {
+            sprite_index = s_dead1;
+            break;
+        }
+        case DEATH.TAPE:
+        {
+            sprite_index = s_dead2;
+            break;
+        }
+        case DEATH.ARROW:
+        {
+            sprite_index = s_dead3;
+            break;
+        }
+    }
+    if ((image_angle &lt; 90) &amp;&amp; (image_angle &gt; -90))
+    {
+        if (death_left)
+        {
+            image_angle += death_step;
+        }
+        else
+        {
+            image_angle -= death_step;
+        }
+    }
 }
 
 if (obj_ground_control.nodes[# l_x, l_y] == NODE.FREE)
@@ -245,10 +294,11 @@ if (obj_ground_control.nodes[# l_x, l_y] == NODE.TEMP) &amp;&amp;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>event_inherited();
+//draw_self();
 draw_set_colour(c_black);
 draw_set_halign(fa_center);
-switch (status)
+/*switch (status)
 {
     case GG.STOP:
     {
@@ -270,7 +320,7 @@ switch (status)
         draw_text(x, y - 25, "DEATH");
         break;
     }
-}
+}*/
 </string>
           </argument>
         </arguments>

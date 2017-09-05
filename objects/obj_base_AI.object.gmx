@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_pesons</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>my_speed = 6;
+            <string>event_inherited();
+my_speed = 6;
 direction = random(360);
 speed = my_speed;
 nodes = obj_ground_control.nodes;
@@ -53,7 +54,8 @@ gy = real_to_grid_y(y);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gx = real_to_grid_x(x);
+            <string>event_inherited();
+gx = real_to_grid_x(x);
 gy = real_to_grid_y(y);
 var top = 0, left = 0;
 if (nodes[# gx - 1, gy] == NODE.BORDER) || (nodes[# gx - 1, gy] == NODE.DEATH)

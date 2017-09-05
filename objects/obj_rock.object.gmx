@@ -3,9 +3,9 @@
   <spriteName>s_rock</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>2</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_deleting_decor</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,18 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>width = sprite_width / obj_ground_control.step;
-height = sprite_width / obj_ground_control.step;
+            <string>event_inherited();
+width = sprite_width / obj_ground_control.step - 5;
+height = sprite_height / obj_ground_control.step - 4;
 nodes = obj_ground_control.nodes;
 l_x = real_to_grid_x(x);
 l_y = real_to_grid_y(y);
-for (var i = 0; i &lt; width; i++)
+for (var i = 1; i &lt; width; i++)
 {
     for (var j = 0; j &lt; height; j++)
     {
-        nodes[# l_x + i, l_y + j] = NODE.DEATH;
+        nodes[# l_x + i, l_y - j] = NODE.DEATH;
     }
 }
+change_to = obj_pump;
 </string>
           </argument>
         </arguments>

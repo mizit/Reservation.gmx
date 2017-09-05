@@ -30,11 +30,13 @@ switch (check)
         break;
     }
     case NODE.TEMP:
+    {
+        death = DEATH.TAPE;
+    }
     case NODE.DEATH:
     {
-        speed = 0;
         status = GG.DEATH;
-        break;
     }
+    break;
 }
 

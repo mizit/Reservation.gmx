@@ -38,6 +38,8 @@
       <sprite>sprites\s_lamp</sprite>
       <sprite>sprites\s_stone</sprite>
       <sprite>sprites\s_can</sprite>
+      <sprite>sprites\s_tumbleweed</sprite>
+      <sprite>sprites\s_paper</sprite>
     </sprites>
     <sprite>sprites\s_hud</sprite>
     <sprites name="gg">
@@ -46,9 +48,15 @@
       <sprite>sprites\s_dead2</sprite>
       <sprite>sprites\s_dead3</sprite>
     </sprites>
+    <sprites name="menu">
+      <sprite>sprites\s_plate</sprite>
+      <sprite>sprites\s_big_plate</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
+    <background>background\back_menu</background>
+    <background>background\back_paper</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -58,7 +66,12 @@
     <script>scripts\behavior_force.gml</script>
     <script>scripts\behavior_move.gml</script>
     <script>scripts\field_size.gml</script>
+    <script>scripts\save_level.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\f_hud</font>
+    <font>fonts\f_small</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_ground_control</object>
     <object>objects\obj_gg</object>
@@ -91,12 +104,62 @@
       <object>objects\obj_lamp</object>
       <object>objects\obj_hatch</object>
       <object>objects\obj_can</object>
+      <object>objects\obj_tumbleweed</object>
+      <object>objects\obj_paper</object>
     </objects>
     <object>objects\obj_hud</object>
+    <objects name="menu">
+      <object>objects\obj_menu_general</object>
+      <object>objects\obj_plate</object>
+      <object>objects\obj_big_plate</object>
+      <object>objects\obj_level_choose</object>
+    </objects>
+    <object>objects\obj_text</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_gen</room>
-    <room>rooms\r_level1</room>
+    <room>rooms\menu</room>
+    <room>rooms\r_show1</room>
+    <room>rooms\r_level01</room>
+    <room>rooms\r_show2</room>
+    <room>rooms\r_level02</room>
+    <room>rooms\r_show3</room>
+    <room>rooms\r_level03</room>
+    <room>rooms\r_show4</room>
+    <room>rooms\r_level04</room>
+    <room>rooms\r_show5</room>
+    <room>rooms\r_level05</room>
+    <room>rooms\r_show6</room>
+    <room>rooms\r_level06</room>
+    <room>rooms\r_show7</room>
+    <room>rooms\r_level07</room>
+    <room>rooms\r_show8</room>
+    <room>rooms\r_level08</room>
+    <room>rooms\r_show9</room>
+    <room>rooms\r_level09</room>
+    <room>rooms\r_show10</room>
+    <room>rooms\r_level10</room>
+    <room>rooms\r_show11</room>
+    <room>rooms\r_level11</room>
+    <room>rooms\r_show12</room>
+    <room>rooms\r_level12</room>
+    <room>rooms\r_show13</room>
+    <room>rooms\r_level13</room>
+    <room>rooms\r_show14</room>
+    <room>rooms\r_level14</room>
+    <room>rooms\r_show15</room>
+    <room>rooms\r_level15</room>
+    <room>rooms\r_show16</room>
+    <room>rooms\r_level16</room>
+    <room>rooms\r_show17</room>
+    <room>rooms\r_level17</room>
+    <room>rooms\r_show18</room>
+    <room>rooms\r_level18</room>
+    <room>rooms\r_show19</room>
+    <room>rooms\r_level19</room>
+    <room>rooms\r_show20</room>
+    <room>rooms\r_level20</room>
+    <room>rooms\r_end</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

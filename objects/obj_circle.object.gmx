@@ -37,6 +37,7 @@ for (var i = 1; i &lt; width; i++)
         nodes[# l_x + i, l_y + j] = NODE.DEATH;
     }
 }
+draw_lightbolt = 0;
 </string>
           </argument>
         </arguments>
@@ -63,7 +64,77 @@ for (var i = 1; i &lt; width; i++)
 gy = real_to_grid_y(y);
 if (nodes[# gx + 1, gy + 1] == NODE.BLOCKED)
 {
-    obj_gg.status = GG.DEATH;
+    if (obj_gg.status != GG.DEATH)
+    {
+        obj_gg.status = GG.DEATH;
+        draw_lightbolt = 30;
+    }
+    depth = -1000;
+}
+else
+{
+    depth = -y;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+if (draw_lightbolt)
+{
+    var left = 1;
+    var lx = x + 59, ly = y + 50;
+    var lstep = 15;
+    draw_set_colour(make_colour_rgb(165, 220, 255));
+    while ((lx != obj_gg.x) &amp;&amp; (l_y != obj_gg.y))
+    {
+        var nx, ny;
+        var pdir = point_direction(lx, ly, obj_gg.x, obj_gg.y);
+        var pdis = point_distance(lx, ly, obj_gg.x, obj_gg.y);
+        if (pdis &gt; lstep)
+        {
+            if (left)
+            {
+                nx = lx + lengthdir_x(lstep, pdir + random(30));
+                ny = ly + lengthdir_y(lstep, pdir + random(30));
+                left = 0;
+            }
+            else
+            {
+                nx = lx + lengthdir_x(lstep, pdir - random(30));
+                ny = ly + lengthdir_y(lstep, pdir - random(30));
+                left = 1;
+            }
+        }
+        else
+        {
+            nx = obj_gg.x;
+            ny = obj_gg.y;
+        }
+        draw_line_width(lx, ly, nx, ny, 3);
+        lx = nx;
+        ly = ny;
+    }
+    draw_set_colour(c_black);
+    draw_lightbolt--;
 }
 </string>
           </argument>

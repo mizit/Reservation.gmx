@@ -36,6 +36,24 @@ ds_grid_set_region(nodes, 2, 2, grid_size - 3, grid_size - 3, NODE.FREE);
 
 instance_create(x_offset + step, y_offset + step, obj_gg);
 obj_gg.my_speed = step;
+
+win_offset = 0;
+win_size = 0;
+for (var i = 0; i &lt; grid_size; i++)
+{
+    for (var j = 0; j &lt; grid_size; j++)
+    {
+        if ((nodes[# i, j] == NODE.BLOCKED) || (nodes[# i, j] == NODE.BORDER))
+        {
+            win_offset ++;
+        }
+        else
+        {
+            win_size ++;
+        }
+    }
+}
+win_in = 0;
 </string>
           </argument>
         </arguments>
@@ -86,7 +104,7 @@ obj_gg.my_speed = step;
             }
             case NODE.DEATH:
             {
-                draw_sprite(s_node_death, -1, x_offset + i * step, y_offset + j * step);
+                //draw_sprite(s_node_death, -1, x_offset + i * step, y_offset + j * step);
                 break;
             }
         }

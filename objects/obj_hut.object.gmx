@@ -26,6 +26,18 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+width = sprite_width / obj_ground_control.step - 1;
+height = sprite_height / obj_ground_control.step - 9;
+nodes = obj_ground_control.nodes;
+l_x = real_to_grid_x(x);
+l_y = real_to_grid_y(y);
+for (var i = -floor(width / 2); i &lt; floor(width / 2); i++)
+{
+    for (var j = 0; j &lt; height; j++)
+    {
+        nodes[# l_x + i, l_y - j] = NODE.DEATH;
+    }
+}
 change_to = obj_house;
 </string>
           </argument>

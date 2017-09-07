@@ -128,7 +128,7 @@ if (nodes[# gx, gy] == NODE.TEMP)
     obj_gg.status = GG.DEATH;
     obj_gg.death = DEATH.ARROW;
 }
-else if (nodes[# gx, gy] != NODE.FREE)
+else if (nodes[# gx, gy] == NODE.BLOCKED)
 {
     instance_destroy();
     instance_create(x, y, obj_sad);

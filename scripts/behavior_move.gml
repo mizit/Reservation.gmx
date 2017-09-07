@@ -35,7 +35,15 @@ switch (check)
     }
     case NODE.DEATH:
     {
-        status = GG.DEATH;
+        if (obj_ground_control.nodes[# l_x, l_y] == NODE.FREE)
+        {
+            status = GG.DEATH;
+        }
+        else
+        {
+            speed = 0;
+            status = GG.STOP;
+        }
     }
     break;
 }

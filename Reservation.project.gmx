@@ -21,6 +21,8 @@
       <sprite>sprites\s_circle</sprite>
       <sprite>sprites\s_spawn</sprite>
       <sprite>sprites\s_sad</sprite>
+      <sprite>sprites\s_special</sprite>
+      <sprite>sprites\s_psycho</sprite>
     </sprites>
     <sprite>sprites\s_shadow</sprite>
     <sprites name="decor">
@@ -67,6 +69,7 @@
     <script>scripts\behavior_move.gml</script>
     <script>scripts\field_size.gml</script>
     <script>scripts\save_level.gml</script>
+    <script>scripts\save_reset.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_hud</font>
@@ -79,6 +82,8 @@
     <objects name="AI">
       <object>objects\obj_base_AI</object>
       <object>objects\obj_run_enemy</object>
+      <object>objects\obj_special</object>
+      <object>objects\obj_psycho</object>
       <object>objects\obj_seeker</object>
       <object>objects\obj_train_head</object>
       <object>objects\obj_train_body</object>

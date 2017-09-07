@@ -53,6 +53,9 @@ nodes = obj_ground_control.nodes;
 list_tmp_x = ds_list_create();
 list_tmp_y = ds_list_create();
 
+gx = 0;
+gy = 0;
+
 list_border_x = ds_list_create();
 list_border_y = ds_list_create();
 for (var i = 0; i &lt; ds_grid_width(nodes) - 2; i++)
@@ -84,8 +87,8 @@ for (var i = 0; i &lt; ds_grid_width(nodes) - 2; i++)
             <kind>1</kind>
             <string>event_inherited();
 old_dir = direction;
-var l_x = real_to_grid_x(x);
-var l_y = real_to_grid_y(y);
+gx = real_to_grid_x(x);
+gy = real_to_grid_y(y);
 if (status != GG.DEATH)
 {
     if (keyboard_check_pressed(vk_left))
@@ -116,7 +119,7 @@ else
         room_restart();
     }
 }
-if ((abs(direction - old_dir) == 180) &amp;&amp; (nodes[# l_x, l_y] == NODE.FREE))
+if ((abs(direction - old_dir) == 180) &amp;&amp; (nodes[# gx, gy] == NODE.FREE))
 {
     direction = old_dir;
 }
@@ -165,14 +168,14 @@ if (status == GG.DEATH)
     }
 }
 
-if (obj_ground_control.nodes[# l_x, l_y] == NODE.FREE)
+if (obj_ground_control.nodes[# gx, gy] == NODE.FREE)
 {
-    obj_ground_control.nodes[# l_x, l_y] = NODE.TEMP;
-    ds_list_add(list_tmp_x, l_x);
-    ds_list_add(list_tmp_y, l_y);
+    obj_ground_control.nodes[# gx, gy] = NODE.TEMP;
+    ds_list_add(list_tmp_x, gx);
+    ds_list_add(list_tmp_y, gy);
 }
 
-if (obj_ground_control.nodes[# l_x, l_y] == NODE.TEMP) &amp;&amp;
+if (obj_ground_control.nodes[# gx, gy] == NODE.TEMP) &amp;&amp;
     (check_next_node() == NODE.BORDER)
 {
     while (ds_list_size(list_tmp_x) &gt; 0)
@@ -341,6 +344,29 @@ draw_set_halign(fa_center);
         break;
     }
 }*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_goto(menu);
 </string>
           </argument>
         </arguments>

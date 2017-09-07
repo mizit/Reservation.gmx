@@ -40,7 +40,7 @@ for (var i = 1; i &lt; width; i++)
 }
 
 max_enm = 10;
-cooldown = room_speed * 15;
+cooldown = room_speed * 10;
 cnt = 0;
 change_to = obj_store;
 </string>

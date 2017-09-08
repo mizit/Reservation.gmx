@@ -50,7 +50,14 @@
             <kind>1</kind>
             <string>if (keyboard_check_pressed(vk_anykey))
 {
-    room_goto_next();
+    if (room != r_end)
+    {
+        room_goto_next();
+    }
+    else
+    {
+        room_goto(menu);
+    }
 }
 </string>
           </argument>

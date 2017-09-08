@@ -32,8 +32,9 @@ pexit = noone;
 time_show = 15;
 alarm[0] = time_show;
 
-
-
+audio_master_gain(0.5);
+audio_stop_all();
+audio_play_sound(snd_menu2, 1, 1);
 </string>
           </argument>
         </arguments>

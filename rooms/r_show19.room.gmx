@@ -11,9 +11,8 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>var tmp = instance_create(0, 0, obj_text);
-tmp.my_text = "Хм, вы вернулись? 
-Поздравляю, только пять процентов ковбоев способно решить эту задачу.
-Как насчёт поля со скалами? Да-да, просто скалы в которые нельзя врезаться на полном ходу."</code>
+tmp.my_text = "Предпоследний уровень. Вообще сейчас просматривая уровни, понятно, что осбого нарастания сложности нет. Но тут уже сроки поджимают. Сейчас пятница, а звук ещё даже не начинал, хотя скорее всего саундтреком ограничусь. 
+Кстати он будет с bensound.com.";</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

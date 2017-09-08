@@ -13,7 +13,7 @@
   <code>var tmp = instance_create(0, 0, obj_text);
 tmp.my_text = "Хм, вы вернулись? 
 Поздравляю, только пять процентов ковбоев способно решить эту задачу.
-Как насчёт поля со скалами? Да-да, просто скалы в которые нельзя врезаться на полном ходу."</code>
+Как насчёт поля со скалами? Да-да, просто скалы, в которые нельзя врезаться на полном ходу."</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

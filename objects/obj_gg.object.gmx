@@ -68,6 +68,32 @@ for (var i = 0; i &lt; ds_grid_width(nodes) - 2; i++)
         </arguments>
       </action>
     </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>ds_list_destroy(list_tmp_x);
+ds_list_destroy(list_tmp_y);
+ds_list_destroy(list_border_x);
+ds_list_destroy(list_border_y);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -165,6 +191,27 @@ if (status == GG.DEATH)
         {
             image_angle -= death_step;
         }
+    }
+}
+
+if (status == GG.STOP)
+{
+    if (nodes[# gx, gy] == NODE.BLOCKED)
+    {
+        var min_dis = 1000;
+        var tmp_x = 0, tmp_y = 0;
+        for (var i = 0; i &lt; ds_list_size(list_border_x); i++)
+        {
+            var tmp = point_distance(gx, gy, list_border_x[| i], list_border_y[| i]);
+            if (tmp &lt; min_dis)
+            {
+                min_dis = tmp;
+                tmp_x = list_border_x[| i];
+                tmp_y = list_border_y[| i];
+            }
+        }
+        x = tmp_x * my_speed + obj_ground_control.x_offset;
+        y = tmp_y * my_speed + obj_ground_control.y_offset;
     }
 }
 
